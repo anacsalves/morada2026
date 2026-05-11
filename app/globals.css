@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #f7f8fc;
+  --surface: #ffffff;
+  --surface-alt: #fff3e5;
+  --text-primary: #44301f;
+  --text-secondary: #79573a;
+  --text-muted: #a07d5a;
+  --accent: #ee9333;
+  --accent-deep: #1d46a0;
+  --accent-soft: #ffe0bd;
+  --border-soft: rgba(130, 83, 35, 0.16);
+  --ink-strong: #342316;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a120c;
+    --surface: #241912;
+    --surface-alt: #342317;
+    --text-primary: #fff3e6;
+    --text-secondary: #e8c8a8;
+    --text-muted: #c69f75;
+    --accent: #f29a3f;
+    --accent-deep: #ffd1a1;
+    --accent-soft: #4b2f18;
+    --border-soft: rgba(255, 223, 188, 0.12);
+    --ink-strong: #120c08;
   }
 }
 
+@theme inline {
+  --font-sans: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(238, 147, 51, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(238, 147, 51, 0.05), transparent 20%),
+    var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: rgba(238, 147, 51, 0.28);
+}
+
+.section-shell {
+  margin-inline: auto;
+  width: min(100%, 80rem);
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-inline: 2rem;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.section-title {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.8rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  color: var(--text-primary);
+}
+
+.section-copy {
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: var(--text-secondary);
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  padding: 0.95rem 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 20px 40px rgba(238, 147, 51, 0.28);
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 88%, #9f4f00);
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  padding: 0.95rem 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.button-secondary:hover {
+  transform: translateY(-1px);
+  background: var(--surface-alt);
 }

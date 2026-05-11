@@ -1,65 +1,127 @@
-import Image from "next/image";
+import { About } from '@/components/About';
+import { Contact } from '@/components/Contact';
+import { Footer } from '@/components/Footer';
+import { Hero } from '@/components/Hero';
+import { Navbar } from '@/components/Navbar';
+import { Process } from '@/components/Process';
+import { ProjectsGallery, type ProjectCategory } from '@/components/ProjectsGallery';
+import { SocialProof } from '@/components/SocialProof';
+
+const projectCategories: ProjectCategory[] = [
+  {
+    title: 'Cozinhas',
+    summary: 'Projetos pensados para fluxo, armazenamento e beleza no uso diario.',
+    highlight: 'Planejamento sob medida para ganhar espaco sem abrir mao da elegancia.',
+    coverImage:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    title: 'Banheiros',
+    summary: 'Marcenaria funcional com materiais e composicoes que valorizam cada detalhe.',
+    highlight: 'Solucoes compactas com organizacao, leveza e acabamento refinado.',
+    coverImage:
+      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    title: 'Quartos',
+    summary: 'Ambientes acolhedores que equilibram conforto, organizacao e personalidade.',
+    highlight: 'Cabeceiras, armarios e paineis pensados para a rotina da casa.',
+    coverImage:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693537084-aa09a45a9f7b?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    title: 'Salas',
+    summary: 'Painel, rack e composicoes sob medida para integrar beleza e convivio.',
+    highlight: 'Projetos que organizam o ambiente sem pesar o visual.',
+    coverImage:
+      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    title: 'Closets',
+    summary: 'Distribuicao inteligente para manter tudo no lugar com acesso facil.',
+    highlight: 'Mais praticidade no dia a dia com um desenho elegante e funcional.',
+    coverImage:
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    title: 'Escritorios',
+    summary: 'Espacos de foco e produtividade com conforto e aproveitamento total.',
+    highlight: 'Layout pensado para rotina profissional em casa ou no negocio.',
+    coverImage:
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+];
+
+const metrics = [
+  { value: 'Desde 2009', label: 'atuando com moveis planejados' },
+  { value: 'Atendimento proximo', label: 'do primeiro contato a entrega' },
+  { value: 'Projetos sob medida', label: 'para cada ambiente da casa' },
+];
+
+const processSteps = [
+  {
+    index: '01',
+    title: 'Entendemos sua rotina',
+    description:
+      'Comecamos ouvindo como voce usa o espaco, quais dores existem hoje e o que nao pode faltar no projeto.',
+  },
+  {
+    index: '02',
+    title: 'Desenhamos a melhor solucao',
+    description:
+      'Transformamos a ideia em um ambiente planejado com foco em circulacao, armazenamento e acabamento.',
+  },
+  {
+    index: '03',
+    title: 'Executamos com acompanhamento',
+    description:
+      'Voce acompanha cada etapa com clareza, alinhamento de detalhes e atencao ao resultado final.',
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <SocialProof metrics={metrics} />
+        <ProjectsGallery projects={projectCategories} />
+        <Process steps={processSteps} />
+        <About />
+        <Contact />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
