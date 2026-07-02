@@ -9,75 +9,58 @@ import { SocialProof } from '@/components/SocialProof';
 
 const projectCategories: ProjectCategory[] = [
   {
-    title: 'Cozinhas',
-    summary: 'Projetos pensados para fluxo, armazenamento e beleza no uso diario.',
+    title: 'Cozinha planejada',
+    summary: 'Marcenaria sob medida com iluminacao, bancada funcional e aproveitamento completo.',
     highlight: 'Planejamento sob medida para ganhar espaco sem abrir mao da elegancia.',
-    coverImage:
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80',
+    coverImage: '/projects/cozinha-planejada.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      '/projects/cozinha-planejada.jpeg',
+      '/projects/painel-tv-iluminado.jpeg',
+      '/projects/painel-tv-puffs.jpeg',
     ],
   },
   {
-    title: 'Banheiros',
-    summary: 'Marcenaria funcional com materiais e composicoes que valorizam cada detalhe.',
-    highlight: 'Solucoes compactas com organizacao, leveza e acabamento refinado.',
-    coverImage:
-      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=80',
+    title: 'Painel iluminado',
+    summary: 'Painel de TV com ripado, nichos iluminados e composicao leve para sala.',
+    highlight: 'Luz indireta, madeira e marmorizado criando um ponto focal elegante.',
+    coverImage: '/projects/painel-tv-iluminado.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      '/projects/painel-tv-iluminado.jpeg',
+      '/projects/painel-tv-puffs.jpeg',
+      '/projects/home-office-ripado.jpeg',
     ],
   },
   {
-    title: 'Quartos',
-    summary: 'Ambientes acolhedores que equilibram conforto, organizacao e personalidade.',
-    highlight: 'Cabeceiras, armarios e paineis pensados para a rotina da casa.',
-    coverImage:
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    title: 'Painel com rack',
+    summary: 'Composicao para TV com rack suspenso, ripado vertical e acabamento amadeirado.',
+    highlight: 'Projetos que organizam a sala sem pesar o visual.',
+    coverImage: '/projects/painel-tv-puffs.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693537084-aa09a45a9f7b?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      '/projects/painel-tv-puffs.jpeg',
+      '/projects/painel-tv-iluminado.jpeg',
+      '/projects/sala-ripada.jpeg',
     ],
   },
   {
-    title: 'Salas',
-    summary: 'Painel, rack e composicoes sob medida para integrar beleza e convivio.',
-    highlight: 'Projetos que organizam o ambiente sem pesar o visual.',
-    coverImage:
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
+    title: 'Sala ripada',
+    summary: 'Parede ripada em madeira com movel baixo curvo e presenca marcante.',
+    highlight: 'Textura, proporcao e acabamento para valorizar a area social.',
+    coverImage: '/projects/sala-ripada.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      '/projects/sala-ripada.jpeg',
+      '/projects/home-office-ripado.jpeg',
+      '/projects/painel-tv-puffs.jpeg',
     ],
   },
   {
-    title: 'Closets',
-    summary: 'Distribuicao inteligente para manter tudo no lugar com acesso facil.',
+    title: 'Detalhes em madeira',
+    summary: 'Ripado, prateleiras iluminadas e bancada integrando beleza e uso diario.',
     highlight: 'Mais praticidade no dia a dia com um desenho elegante e funcional.',
-    coverImage:
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
+    coverImage: '/projects/home-office-ripado.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80',
-    ],
-  },
-  {
-    title: 'Escritorios',
-    summary: 'Espacos de foco e produtividade com conforto e aproveitamento total.',
-    highlight: 'Layout pensado para rotina profissional em casa ou no negocio.',
-    coverImage:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+      '/projects/home-office-ripado.jpeg',
+      '/projects/sala-ripada.jpeg',
+      '/projects/cozinha-planejada.jpeg',
     ],
   },
 ];

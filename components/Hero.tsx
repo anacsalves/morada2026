@@ -31,7 +31,7 @@ export function Hero() {
           <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-[2rem] bg-[linear-gradient(180deg,var(--accent-soft),rgba(238,147,51,0.12))]" />
           <div className="relative overflow-hidden rounded-[2rem] border border-[color:var(--border-soft)] bg-[color:var(--surface)] shadow-[0_40px_100px_rgba(65,44,28,0.16)]">
             <Image
-              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80"
+              src="/projects/cozinha-planejada.jpeg"
               alt="Cozinha planejada com acabamento sofisticado"
               width={1400}
               height={1040}
