@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function Contact() {
   return (
-    <section id="contato" className="relative overflow-hidden bg-[#163b8f] py-20 text-white md:py-24">
+    <section id="contato" className="relative overflow-hidden bg-[color:var(--brand-navy)] py-20 text-white md:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(238,147,51,0.3),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_22%)]" />
       <div className="section-shell relative">
         <div className="mx-auto max-w-4xl text-center">
