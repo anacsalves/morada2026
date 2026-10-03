@@ -5,7 +5,7 @@ export function About() {
     <section id="sobre" className="section-shell grid gap-10 py-20 md:py-24 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
       <div className="overflow-hidden rounded-[2rem]">
         <Image
-          src="/rodrigo.jpeg"
+          src="/rodrigo.png"
           alt="Rodrigo Avila da Morada Ambientes Planejados"
           width={1080}
           height={1080}
