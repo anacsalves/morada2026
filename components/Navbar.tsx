@@ -19,7 +19,7 @@ export function Navbar() {
       <div className="section-shell flex h-20 items-center justify-between">
         <Link href="#hero" className="flex items-center gap-4">
           <Image
-            src="/logoMovel.jpeg"
+            src="/logo1.png"
             alt="Logo da Morada Ambientes Planejados"
             width={56}
             height={56}
